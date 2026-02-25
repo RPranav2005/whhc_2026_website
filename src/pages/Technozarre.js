@@ -38,7 +38,7 @@ const Technozarre = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#050505', minHeight: '100vh', overflowX: 'hidden' }}>
+    <div style={{ backgroundColor: '#050505', minHeight: '100vh', width: '100%', overflowX: 'hidden', color: 'white' }}>
       
       {/* AnimatePresence allows elements to animate out when they are removed from the screen */}
       <AnimatePresence mode="wait">
