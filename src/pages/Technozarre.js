@@ -166,7 +166,7 @@ const Technozarre = () => {
                 variants={heroItem}
                 style={{
                   fontFamily: "'Akira', sans-serif",
-                  fontSize: 'clamp(2rem, 5vw, 5rem)',
+                  fontSize: 'clamp(2px, 2vw, 10px)',
                   margin: '-10px 0 40px 0',
                   color: 'transparent',
                   WebkitTextStroke: '2px rgba(255, 50, 50, 0.8)',
