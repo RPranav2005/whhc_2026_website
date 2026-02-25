@@ -1,16 +1,3 @@
-import { useState } from "react";
-import ReactCardFlip from "react-card-flip";
-import sih from "../../assets/technozarre2k25/workshops/sih.png"
-import research from "../../assets/technozarre2k25/workshops/research.png"
-import comingsoon from "../../assets/technozarre2k25/events/comingsoon.png"
-import staytuned from "../../assets/technozarre2k25/events/staytuned.png"
-import sih_bg from "../../assets/technozarre2k25/workshops/sih_bg.png"
-import research_bg from "../../assets/technozarre2k25/workshops/research_bg.png"
-import quantum_computing from "../../assets/technozarre2k25/workshops/quantum_computing.png"
-import quantum_computing_bg from "../../assets/technozarre2k25/workshops/quantum_computing_bg.png"
-
-
-import { Button } from "react-bootstrap";
 import EventCard from "./EventCard";
 
 // Later, you can import your real images here!
