@@ -56,12 +56,14 @@ const Navigation = () => {
                 Technozarre2k26
               </NavDropdown.Item>
               {/* <NavDropdown.Divider /> */}
+              {/* 🛑 HIDING WORKSHOPS FOR NOW
               <NavDropdown.Item
                 className="technozarre-link"
                 onClick={() => handleScroll("workshops")}
               >
                 Workshops
               </NavDropdown.Item>
+              */}
               <NavDropdown.Item
                 className="technozarre-link"
                 onClick={() => handleScroll("technical")}

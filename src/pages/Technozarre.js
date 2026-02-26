@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Timer from "../components/Technozarre/Timer";
-import Workshops from "../components/Technozarre/Workshops";
+// import Workshops from "../components/Technozarre/Workshops"; // 🛑 Hiding the import for now to prevent warnings
 import Navigation from "../components/Navigation";
 import Events from "../components/Technozarre/Events";
 import Footer from "../components/Home/Footer";
@@ -178,6 +178,7 @@ const Technozarre = () => {
             {/* Rest of the Events Page */}
             <div className="technozarre-page" style={{background: '#050505', height: '100%', paddingTop: '40px'}}>
                 
+                {/* 🛑 HIDING WORKSHOPS COMPONENT FOR NOW 
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeIn} style={{color: 'white', fontSize: '45px', fontWeight: '700', textAlign: 'center', marginTop: '20px'}}>
                   <span className="technozarre-title" style={{ textShadow: '0 0 15px rgba(255, 0, 0, 0.6)' }}>WORKSHOPS</span>
                 </motion.div>
@@ -185,6 +186,7 @@ const Technozarre = () => {
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
                   <Workshops />
                 </motion.div>
+                */}
 
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeIn} style={{color: 'white', fontSize: '45px', fontWeight: '700', textAlign: 'center', marginTop: '50px'}}>
                   <span className="technozarre-title" style={{ textShadow: '0 0 15px rgba(255, 0, 0, 0.6)' }}>EVENTS</span>
