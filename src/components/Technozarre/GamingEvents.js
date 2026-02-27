@@ -1,7 +1,7 @@
 
 
 import EventCard from "./EventCard";
-import tz_game_1 from "../../assets/technozarre2k26/tz_game_1.png";
+import tz_game_1 from "../../assets/technozarre2k26/tz_game_1.5.png";
 import tz_game_2 from "../../assets/technozarre2k26/tz_game_2.png";
 import tz_game_3 from "../../assets/technozarre2k26/tz_game_3.png";
 // Later, you can import your real images here!

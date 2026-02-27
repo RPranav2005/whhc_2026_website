@@ -1,8 +1,8 @@
 
 import EventCard from "./EventCard";
-import tz_tech_1 from "../../assets/technozarre2k26/tz_tech_1.png";
+import tz_tech_1 from "../../assets/technozarre2k26/tz_tech_1.5.png";
 import tz_tech_2 from "../../assets/technozarre2k26/tz_tech_2.png";
-import tz_tech_3 from "../../assets/technozarre2k26/tz_tech_3.png";
+import tz_tech_3 from "../../assets/technozarre2k26/tz_tech_3.5.png";
 import tz_tech_4 from "../../assets/technozarre2k26/tz_tech_4.png";
 import tz_tech_5 from "../../assets/technozarre2k26/tz_tech_5.png";
 import tz_tech_6 from "../../assets/technozarre2k26/tz_tech_6.png";
