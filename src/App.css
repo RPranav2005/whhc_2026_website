@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6,
     display: flex;
     justify-content: center;
     margin-bottom: -120px; /* Pulls up the empty space left behind by scaling */
+    overflow: hidden;
   }
 
 }
@@ -360,11 +361,12 @@ h1, h2, h3, h4, h5, h6,
   border-radius: 15px;
 }
 */
-.technozzare-page {
+.technozarre-page {
   background-color: #000000;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  overflow: hidden;
 }
 
 

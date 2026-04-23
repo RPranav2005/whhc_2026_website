@@ -127,7 +127,7 @@ const Technozarre = () => {
                 backgroundColor: '#050505',
                 paddingTop: '0px',
                 paddingBottom: '0px',
-                overflowX: 'hidden' 
+                overflow: 'hidden' 
               }}
             >
               
