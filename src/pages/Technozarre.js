@@ -5,6 +5,7 @@ import Timer from "../components/Technozarre/Timer";
 import Navigation from "../components/Navigation";
 import Events from "../components/Technozarre/Events";
 import Footer from "../components/Home/Footer";
+import technozarreLogo from "../assets/tzzz2.png";
 
 const Technozarre = () => {
   // State to control the loading screen
@@ -112,57 +113,41 @@ const Technozarre = () => {
               <Navigation />
             </div>
             
-            {/* Pure Text Hero Section */}
+            {/* Image Hero Section */}
             <motion.div 
               variants={heroContainer}
               initial="hidden"
               animate="show"
               style={{
                 width: '100%',
-                minHeight: '80vh',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 backgroundColor: '#050505',
-                paddingTop: '120px', // 🛑 Keeps it safely BELOW your navbar
-                paddingBottom: '40px',
+                paddingTop: '0px',
+                paddingBottom: '0px',
                 overflowX: 'hidden' 
               }}
             >
               
-              {/* 1. Unbreakable TECHNOZARRE Title */}
-              <motion.h1 
+              {/* 1. Technozarre Logo */}
+              <motion.img 
                 variants={heroItem}
+                src={technozarreLogo}
+                alt="Technozarre Logo"
                 style={{
-                  fontFamily: "'Akira', sans-serif",
-                  fontSize: 'clamp(1.5rem, 7vw, 6rem)', // 🛑 Math fix: Shrinks enough for mobile, massive on desktop
-                  color: 'rgb(255, 50, 50)',
-                  textAlign: 'center',
-                  margin: '0',
-                  width: '100%',
-                  whiteSpace: 'nowrap', // 🛑 Forbids the text from breaking or wrapping
-                  textShadow: '0px 0px 15px rgba(255, 0, 0, 0.6)'
+                  width: '95%',
+                  maxWidth: '1200px',
+                  maxHeight: '65vh',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 0 20px rgba(255, 50, 50, 0.4))',
+                  marginTop: '0px',
+                  marginBottom: '-150px',
+                  position: 'relative',
+                  zIndex: '1'
                 }}
-              >
-                TECHNOZARRE
-              </motion.h1>
-
-              {/* 2. Responsive 2026 Outline */}
-              <motion.h2 
-                variants={heroItem}
-                style={{
-                  fontFamily: "'Akira', sans-serif",
-                  fontSize: 'clamp(1.2rem, 5vw, 4rem)', 
-                  color: 'transparent',
-                  WebkitTextStroke: '2px rgb(255, 50, 50)',
-                  letterSpacing: 'clamp(2px, 1vw, 10px)', // Kills the massive spacing on phones
-                  textAlign: 'center',
-                  margin: '10px 0 40px 0'
-                }}
-              >
-                2026
-              </motion.h2>
+              />
 
               {/* 3. The Timer (Wrapped in our nuke class) */}
               <motion.div 
@@ -176,19 +161,9 @@ const Technozarre = () => {
             </motion.div>
 
             {/* Rest of the Events Page */}
-            <div className="technozarre-page" style={{background: '#050505', height: '100%', paddingTop: '40px'}}>
+            <div className="technozarre-page" style={{background: 'transparent', height: '100%', paddingTop: '0px', position: 'relative', zIndex: '2'}}>
                 
-                {/* 🛑 HIDING WORKSHOPS COMPONENT FOR NOW 
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeIn} style={{color: 'white', fontSize: '45px', fontWeight: '700', textAlign: 'center', marginTop: '20px'}}>
-                  <span className="technozarre-title" style={{ textShadow: '0 0 15px rgba(255, 0, 0, 0.6)' }}>WORKSHOPS</span>
-                </motion.div>
-                
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-                  <Workshops />
-                </motion.div>
-                */}
-
-                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeIn} style={{color: 'white', fontSize: '45px', fontWeight: '700', textAlign: 'center', marginTop: '50px'}}>
+                <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeIn} style={{color: 'white', fontSize: '45px', fontWeight: '700', textAlign: 'center', marginTop: '0px'}}>
                   <span className="technozarre-title" style={{ textShadow: '0 0 15px rgba(255, 0, 0, 0.6)' }}>EVENTS</span>
                 </motion.div>
                 
@@ -196,7 +171,7 @@ const Technozarre = () => {
                   <Events />
                 </motion.div>
 
-                <div style={{marginTop: '50px'}}>
+                <div style={{marginTop: '20px'}}>
                   <Footer />
                 </div>
             </div>

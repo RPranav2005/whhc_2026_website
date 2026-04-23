@@ -38,7 +38,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Sundari Avanthikaa</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>President</text>
@@ -66,7 +66,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Anirudh Sowrirajan</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Vice President</text>
@@ -94,7 +94,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Pranav Srinivasan</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Secretary & Treasurer</text>
@@ -260,7 +260,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Mohammed Azhaar</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Joint Treasurer</text>
@@ -288,7 +288,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Shreeja Katama</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Joint Technical Head</text>
@@ -315,7 +315,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Nancy Christina</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Joint Head of Design</text>
@@ -351,7 +351,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '3%', marginRight: '3%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Nayel Ahmed</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Joint Head of Operations & Logistics</text>
@@ -379,7 +379,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '0%', marginRight: '0%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Dev Shah</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Joint Head of Working Committee</text>
@@ -407,7 +407,7 @@ const Bod = () =>{
                 <br></br>
                 <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                     <div className="team-members">
-                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                        <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                             <text style={{color:'white',fontWeight:'1000'}}>Prathik S</text>
                             <br></br>
                             <text style={{fontFamily:'monospace'}}>Joint Head of Outreach</text>

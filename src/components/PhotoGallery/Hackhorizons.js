@@ -22,14 +22,14 @@ const Photogallery = () => {
         <Navigation />
       </div>
 
-      <Container style={{ paddingTop: '60px', paddingBottom: '60px' }}>
+      <Container style={{ paddingTop: '120px', paddingBottom: '40px' }}>
         
         {/* =========================================
             HACK HORIZONS 2025 SECTION
             ========================================= */}
         <div style={{ marginBottom: '60px' }}>
           <h1 style={{ 
-            fontFamily: "'Akira', sans-serif", 
+            fontFamily: "'Hunters', sans-serif", 
             color: 'rgb(255, 50, 50)', 
             textShadow: '0px 0px 15px rgba(255, 0, 0, 0.6)',
             marginBottom: '30px',

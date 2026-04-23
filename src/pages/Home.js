@@ -1,68 +1,70 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Navigation from '../components/Navigation'
 import WhatWeDoCard from "../components/Home/WhatWeDoCard";
 import FlagShipEvent from "../components/Home/FlagshipEvent";
 import Footer from "../components/Home/Footer";
-import MatrixRain from "../components/Home/MatrixRain";
+// import divider from "../assets/divider.png";
 import { motion } from "framer-motion";
+import bgImage from "../assets/Home pg bg.png";
+import TheCrew from "../components/Home/TheCrew";
+
 
 const Home = () => {
-  const [isNavVisible, setIsNavVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsNavVisible(true);
-      } else {
-        setIsNavVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="home" style={{ width: '100%', overflowX: 'hidden' }}>
+    <div className="home" style={{ width: '100%', overflowX: 'hidden', backgroundColor: 'transparent' }}>
       
-      {/* The Animated Navbar */}
-      <motion.div
-        initial={{ y: '-100%', opacity: 0 }}
-        animate={{ 
-          y: isNavVisible ? 0 : '-100%', 
-          opacity: isNavVisible ? 1 : 0 
-        }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
-        style={{
-          position: 'fixed',
+      <Navigation />
+
+      {/* Hero Section */}
+      <div className="hero-container" style={{ 
+        position: 'relative', 
+        height: '100vh', 
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden'
+      }}>
+        
+        {/* Hero Background Image with gradient fade */}
+        <div style={{
+          position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
-          zIndex: 100,
-          backgroundColor: 'rgba(0, 0, 0, 0.85)', 
-          backdropFilter: 'blur(5px)', 
-          borderBottom: '1px solid rgba(255, 0, 0, 0.3)' 
-        }}
-      >
-        <Navigation />
-      </motion.div>
+          height: '100%',
+          zIndex: 0
+        }}>
+          <img
+            src={bgImage}
+            alt="Hero Background"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              filter: 'brightness(0.75)'
+            }}
+          />
+          {/* Gradient fades image into particle section below */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '35vh',
+            background: 'linear-gradient(to bottom, transparent, black)',
+            zIndex: 1
+          }} />
+        </div>
 
-      {/* 3. The Matrix Rain Container */}
-      <div className="video-container" style={{ position: 'relative', overflow: 'hidden', backgroundColor: 'black', minHeight: '100vh', width: '100%' }}>
-        
-        <MatrixRain />
-        
-        {/* The Text Floating Over It */}
+
+        {/* Centered Content */}
         <div style={{ 
-          position: 'absolute', 
-          top: '50%', 
-          left: '50%', 
-          transform: 'translate(-50%, -50%)', 
           zIndex: 10, 
           textAlign: 'center', 
           width: '100%',
-          pointerEvents: 'none',
-          padding: '0 20px' // Added padding so it doesn't touch the screen edges on mobile
+          pointerEvents: 'none'
         }}>
           {/* Glitching, Massive WHHC Title */}
           <motion.h1 
@@ -80,8 +82,8 @@ const Home = () => {
             }}
             style={{ 
               color: 'white', 
-              fontSize: 'clamp(3.5rem, 15vw, 12rem)', // 🛑 FIX: Lowered minimum to 3.5rem so it fits on tiny phones
-              fontFamily: "'Akira', sans-serif",
+              fontSize: 'clamp(3.5rem, 15vw, 12rem)',
+              fontFamily: "'Hunters', sans-serif",
               fontWeight: '900', 
               textShadow: '0px 0px 30px rgba(255, 0, 0, 0.8)',
               margin: 0,
@@ -91,97 +93,226 @@ const Home = () => {
             WHHC
           </motion.h1>
 
-          {/* Subtitle */}
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-            style={{ 
-              color: 'rgb(255, 50, 50)', 
-              fontSize: 'clamp(0.8rem, 3vw, 1.5rem)', // 🛑 FIX: Scaled for mobile
-              fontWeight: 'bold', 
-              letterSpacing: 'clamp(2px, 1vw, 5px)', // 🛑 FIX: Shrinks letter spacing on phones
-              marginTop: '10px',
-              margin: '10px auto 0 auto',
-              maxWidth: '800px'
-            }}
-          >
-            SECURING THE CYBER WORLD ONE BYTE AT A TIME
-          </motion.p>
+          {/* Subtitle removed */}
         </div>
       </div>
 
       {/* Main Content Sections */}
-      <div className="home-background" style={{ paddingBottom: '40px', backgroundColor: 'black' }}>
-      
-        
-        {/* About The Department */}
-        {/* 🛑 FIX: Replaced margin % with responsive clamp padding so text doesn't squish! */}
-        {/* 🛑 FIX: Changed marginTop to paddingTop to kill the white gap! */}
-        <div style={{ textAlign: 'center', padding: '0 clamp(20px, 8vw, 10%)', paddingTop: '60px' }}>
-          <div>
-            <h2 style={{color: 'white', fontSize: 'clamp(2rem, 5vw, 45px)', fontWeight: '700', margin: '0 0 20px 0'}}>
-              About The Department
+      <div className="home-background" style={{ 
+        paddingBottom: '80px', 
+        fontFamily: "'Poppins', sans-serif",
+        position: 'relative',
+        backgroundColor: 'transparent',
+      }}>
+
+        {/* About The Department Card (Vision) */}
+        <div id="about" style={{ 
+          margin: '100px auto', 
+          maxWidth: '1400px', 
+          width: '95%',
+          padding: '0 20px',
+          position: 'relative',
+          zIndex: 1
+        }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 50, 50, 0.2)',
+              borderRadius: '24px',
+              padding: '60px 40px',
+              textAlign: 'center',
+              position: 'relative',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
+            }}
+          >
+            {/* Icon Header */}
+            <div style={{
+              position: 'absolute',
+              top: '-40px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '80px',
+              height: '80px',
+              backgroundColor: '#ff3232',
+              borderRadius: '50%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              boxShadow: '0 4px 15px rgba(255, 50, 50, 0.4)'
+            }}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+
+            <h2 style={{
+              color: 'white', 
+              fontSize: 'clamp(1.5rem, 4vw, 32px)', 
+              fontWeight: '800', 
+              margin: '20px 0 30px 0',
+              textTransform: 'uppercase',
+              letterSpacing: '2px'
+            }}>
+              Our <span style={{color: '#ff3232'}}>Vision</span>
             </h2>
             
-            <p className="home-paragraphtext" style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', lineHeight: '1.8' }}>
-              Our club is based out of the <span style={{color: 'rgb(255, 50, 50)'}}>DCSE, SRM Vadapalani, Chennai</span>. Our department boasts a renowned faculty known for their 
-              <span style={{color: 'rgb(255, 50, 50)'}}> expertise in a wide range of fields</span>. A substantial portion of our esteemed faculty members bring extensive experience,
+            <p style={{ 
+              color: '#ffffff',
+              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', 
+              lineHeight: '1.8',
+              textAlign: 'center',
+              margin: 0,
+              fontWeight: '400'
+            }}>
+              Our club is based out of the <span style={{fontWeight: '700', color: '#ff3232'}}>DCSE, SRM Vadapalani, Chennai</span>. Our department boasts a renowned faculty known for their 
+              <span style={{fontWeight: '700', color: '#ff3232'}}> expertise in a wide range of fields</span>. A substantial portion of our esteemed faculty members bring extensive experience,
               with many having dedicated over a decade to their respective fields. Our research initiatives revolve around crucial
-              domains such as <span style={{color: 'rgb(255, 50, 50)'}}>network security, cryptography, wireless sensor networks, data mining, and cloud computing</span>. This steadfast
+              domains such as <span style={{fontWeight: '700', color: '#ff3232'}}>network security, cryptography, wireless sensor networks, data mining, and cloud computing</span>. This steadfast
               dedication to research is exemplified by the productive contributions of both our faculty and students, as they continually
               showcase and publish their work at esteemed national and international conferences.
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Divider */}
-        <div style={{ margin: '40px 0' }}>
-          <hr style={{ borderTop: '1px solid rgba(255, 0, 0, 0.4)', boxShadow: '0px 0px 10px rgba(255, 0, 0, 0.5)', width: '50px', margin: '0 auto' }} />
-        </div>
+        {/* About Us Card (Mission) */}
+        <div style={{ 
+          margin: '100px auto', 
+          maxWidth: '1400px', 
+          width: '95%',
+          padding: '0 20px' 
+        }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 50, 50, 0.2)',
+              borderRadius: '24px',
+              padding: '60px 40px',
+              textAlign: 'center',
+              position: 'relative',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
+            }}
+          >
+            {/* Icon Header */}
+            <div style={{
+              position: 'absolute',
+              top: '-40px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '80px',
+              height: '80px',
+              backgroundColor: '#ff3232',
+              borderRadius: '50%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              boxShadow: '0 4px 15px rgba(255, 50, 50, 0.4)'
+            }}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="6" stroke="white" strokeWidth="2"/>
+                <circle cx="12" cy="12" r="2" fill="white"/>
+              </svg>
+            </div>
 
-        {/* About Us */}
-        <div style={{ textAlign: 'center', padding: '0 clamp(20px, 8vw, 10%)' }}>
-            <h2 style={{color: 'white', fontSize: 'clamp(2rem, 5vw, 45px)', fontWeight: '700', margin: '0 0 20px 0'}}>
-              About Us
+            <h2 style={{
+              color: 'white', 
+              fontSize: 'clamp(1.5rem, 4vw, 32px)', 
+              fontWeight: '800', 
+              margin: '20px 0 30px 0',
+              textTransform: 'uppercase',
+              letterSpacing: '2px'
+            }}>
+              Our <span style={{color: '#ff3232'}}>Mission</span>
             </h2>
             
-            <p className="home-paragraphtext" style={{ fontSize: 'clamp(1rem, 3vw, 1.2rem)', lineHeight: '1.8' }}>
-              <span style={{color: 'rgb(255, 50, 50)'}}>White Hat Hackers Club</span> is a student-driven technical organization headquartered at  
-              <span style={{color: 'rgb(255, 50, 50)'}}> SRMIST, Vadapalani Campus</span>. The club’s primary objective is to inspire students to delve into the realm of 
-              <span style={{color: 'rgb(255, 50, 50)'}}> cybersecurity and ethical hacking</span>, equipping them with the essential skills for success in this field. We
+            <p style={{ 
+              color: '#ffffff',
+              fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', 
+              lineHeight: '1.8',
+              textAlign: 'center',
+              margin: 0,
+              fontWeight: '400'
+            }}>
+              <span style={{fontWeight: '700', color: '#ff3232'}}>White Hat Hackers Club</span> is a student-driven technical organization headquartered at  
+              <span style={{fontWeight: '700', color: '#ff3232'}}> SRMIST, Vadapalani Campus</span>. The club’s primary objective is to inspire students to delve into the realm of 
+              <span style={{fontWeight: '700', color: '#ff3232'}}> cybersecurity and ethical hacking</span>, equipping them with the essential skills for success in this field. We
               welcome students from diverse backgrounds and skill levels, ranging from beginners to advanced, to refine
               their abilities. Our main goal is to establish a space where like-minded individuals can initiate discussions
               about ethical hacking and cybersecurity, leveraging their knowledge to drive meaningful progress.
             </p>
-        </div>
-
-        {/* Divider */}
-        <div style={{ margin: '40px 0' }}>
-          <hr style={{ borderTop: '1px solid rgba(255, 0, 0, 0.4)', boxShadow: '0px 0px 10px rgba(255, 0, 0, 0.5)', width: '50px', margin: '0 auto' }} />
+          </motion.div>
         </div>
 
         {/* What We Do */}
-        <div>
-          <div style={{ textAlign: 'center', padding: '0 clamp(20px, 8vw, 10%)' }}>
-            <h2 style={{color: 'white', fontSize: 'clamp(2rem, 5vw, 45px)', fontWeight: '700', margin: '0 0 20px 0'}}>
+        <div style={{ marginTop: '100px', padding: '0 20px' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ 
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 50, 50, 0.2)',
+              borderRadius: '24px',
+              padding: '60px clamp(20px, 8vw, 10%)',
+              textAlign: 'center', 
+              maxWidth: '1200px',
+              margin: '0 auto',
+              boxShadow: '0 20px 50px rgba(0,0,0,0.3)'
+            }}
+          >
+            <h2 style={{
+              color: 'white', 
+              fontSize: 'clamp(2rem, 5vw, 45px)', 
+              fontWeight: '700', 
+              margin: '0 0 20px 0',
+              textTransform: 'uppercase'
+            }}>
               What we do
             </h2>
             
-            <p className="home-paragraphtext" style={{ fontSize: 'clamp(1rem, 3vw, 23px)', textAlign: 'center', lineHeight: '1.8' }}>
+            <p style={{ 
+              fontWeight: '400',
+              fontSize: 'clamp(1rem, 3vw, 1.2rem)', 
+              textAlign: 'center', 
+              lineHeight: '1.8',
+              color: '#ccc',
+              margin: '0 auto',
+              maxWidth: '900px'
+            }}>
               Through our lineup of workshops and events, along with our online publications of articles on our website and social media,
               we aim to impart knowledge about the applications, advancements, and future prospects in the world of ethical hacking and cybersecurity.
             </p>
-          </div>
+          </motion.div>
           
           <div style={{ display: 'flex', justifyContent: 'center', padding: '0 20px', marginTop: '50px' }}>
             <WhatWeDoCard />
           </div>
         </div>
 
-        {/* Divider */}
-        <div style={{ margin: '60px 0' }}>
-          <hr style={{ borderTop: '1px solid rgba(255, 0, 0, 0.4)', boxShadow: '0px 0px 10px rgba(255, 0, 0, 0.5)', width: '50px', margin: '0 auto' }} />
+        {/* Flagship Event Divider */}
+        <div style={{ width: '100%', margin: '80px 0', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '1200px', 
+            height: '1px', 
+            background: 'linear-gradient(90deg, transparent, rgba(255, 50, 50, 0.8), transparent)',
+            boxShadow: '0 0 15px rgba(255, 50, 50, 0.3)'
+          }} />
         </div>
 
         {/* Flagship Event */}
@@ -189,12 +320,14 @@ const Home = () => {
           <FlagShipEvent />
         </div>
 
-        <div>
-          <Footer />
-        </div>
+        {/* The Crew Section */}
+        <TheCrew />
+
+        <Footer />
       </div>
+
     </div>
   )
 }
 
-export default Home;
+export default Home;

@@ -1,0 +1,149 @@
+.navbar-container {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 40px;
+}
+
+.whhc-logo-top-left {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.whhc-logo-top-left img {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0px 0px 6px rgba(255, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.whhc-logo-top-left img:hover {
+  transform: scale(1.1);
+}
+
+.nav-capsule {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideInDown 0.8s ease-out;
+}
+
+/* Left group: items push toward center (right-aligned) */
+.nav-group-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  padding-right: 30px;
+}
+
+/* Right group: items push toward center (left-aligned) */
+.nav-group-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  padding-left: 30px;
+}
+
+.nav-logo-capsule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo-capsule:hover {
+  transform: scale(1.1);
+}
+
+.nav-logo-capsule img {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0px 0px 6px rgba(255, 0, 0, 0.6));
+}
+
+.nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #ff3232;
+  text-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
+}
+
+@keyframes slideInDown {
+
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .nav-capsule {
+    padding: 10px 20px;
+    gap: 15px;
+  }
+  
+  .nav-item {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .whhc-logo-top-left {
+
+    height: 45px;
+    left: 15px;
+    top: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    top: auto;
+    bottom: 20px;
+  }
+  
+  .nav-capsule {
+    padding: 10px 15px;
+    gap: 10px;
+    width: 90%;
+    justify-content: space-around;
+  }
+
+  .nav-item {
+    font-size: 10px;
+  }
+}
+

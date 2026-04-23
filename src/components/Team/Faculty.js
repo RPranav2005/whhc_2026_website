@@ -12,7 +12,7 @@ const Faculty = () =>{
             <Card.Body>
             <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                 <div className="team-members">
-                    <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                    <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                         <text style={{color:'white',fontWeight:'1000'}}>Dr. P. Chitra</text>
                         <br></br>
                         <text style={{fontFamily:'monospace'}}>Head of Department</text>
@@ -27,7 +27,7 @@ const Faculty = () =>{
             <Card.Body>
             <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                 <div className="team-members">
-                    <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                    <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                         <text style={{color:'white',fontWeight:'1000'}}>Dr. P. Jayanthi</text>
                         <br></br>
                         <text style={{fontFamily:'monospace'}}>Faculty Coordinator</text>
@@ -42,7 +42,7 @@ const Faculty = () =>{
             <Card.Body>
             <div style={{ textAlign: 'center', marginLeft: '5%', marginRight: '5%'}}>
                 <div className="team-members">
-                    <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%'}}>
+                    <div style={{paddingRight: '2%', paddingLeft: '2%',paddingTop: '5%', paddingBottom: '5%', fontFamily: "'Hunters', sans-serif"}}>
                         <text style={{color:'white',fontWeight:'1000'}}>Dr. B. Prabha</text>
                         <br></br>
                         <text style={{fontFamily:'monospace'}}>Faculty Coordinator</text>

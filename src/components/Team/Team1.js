@@ -7,7 +7,7 @@ const Team1 = () =>{
         <CardGroup>
             <Card style={{border:"none", backgroundColor: "transparent"}}>
                 <Card.Title style={{textAlign:'left',marginTop: '10%',marginLeft:'10px'}}>
-                    <text className="team-paragraphtext" style = {{fontSize:'50px', fontWeight:'1000',fontStyle:'normal'}}>MEET OUR TEAM</text>
+                    <text className="team-paragraphtext" style = {{fontSize:'50px', fontWeight:'1000',fontStyle:'normal', fontFamily: "'Hunters', sans-serif"}}>MEET OUR TEAM</text>
                 </Card.Title>
                 <Card.Body>
                     <Card.Text className="team-paragraphtext" style = {{fontSize:'20px'}}>

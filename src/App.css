@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap');
 
 
+@font-face {
+  font-family: 'Hunters';
+  src: url('./assets/fonts/hunters_kpop.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   max-width: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.navbrand, 
+.whatwedotitle, 
+.technozarre-title, 
+.technozarre-subtitle,
+.technozarre-back-header {
+  font-family: 'Hunters', sans-serif !important;
 }
 
 *, *::before, *::after {
@@ -484,7 +502,6 @@ html, body {
   color: rgb(129, 129, 129);
   font-size: 45px;
   line-height: 1.7;
-  font-style: italic;
   font-weight: 900;
   text-align: center;
 }
@@ -493,7 +510,6 @@ html, body {
   color: rgb(255, 50, 50); /* Bright Red */
   font-size: 35px;
   line-height: 1.7;
-  font-style: italic;
   font-weight: 900;
   text-align: center;
 }

@@ -33,7 +33,7 @@ const Photogallery = () => {
   const tzImages = [tz1, tz2, tz3, tz4, tz5, tz6];
 
   return (
-    <div style={{ backgroundColor: '#050505', minHeight: '100vh', color: 'white', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ backgroundColor: 'transparent', color: 'white' }}>
       
       {/* 1. SINGLE STICKY NAVBAR */}
       <div style={{ backgroundColor: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 50 }}>
@@ -41,14 +41,14 @@ const Photogallery = () => {
       </div>
 
       {/* Main Content Wrapper (Flexes to push footer down) */}
-      <Container style={{ paddingTop: '60px', paddingBottom: '60px', flex: 1 }}>
+      <Container style={{ paddingTop: '120px', paddingBottom: '30px' }}>
         
         {/* =========================================
             SECTION 1: HACK HORIZONS 2025
             ========================================= */}
         <div style={{ marginBottom: '80px' }}>
           <h1 style={{ 
-            fontFamily: "'Akira', sans-serif", 
+            fontFamily: "'Hunters', sans-serif", 
             color: 'rgb(255, 50, 50)', 
             textShadow: '0px 0px 15px rgba(255, 0, 0, 0.6)',
             marginBottom: '30px',
@@ -90,7 +90,7 @@ const Photogallery = () => {
             ========================================= */}
         <div style={{ marginBottom: '60px' }}>
           <h1 style={{ 
-            fontFamily: "'Akira', sans-serif", 
+            fontFamily: "'Hunters', sans-serif", 
             color: 'rgb(255, 50, 50)', 
             textShadow: '0px 0px 15px rgba(255, 0, 0, 0.6)',
             marginBottom: '30px',
@@ -128,7 +128,7 @@ const Photogallery = () => {
             ========================================= */}
         <div style={{ marginBottom: '60px' }}>
           <h1 style={{ 
-            fontFamily: "'Akira', sans-serif", 
+            fontFamily: "'Hunters', sans-serif", 
             color: 'rgb(255, 50, 50)', 
             textShadow: '0px 0px 15px rgba(255, 0, 0, 0.6)',
             marginBottom: '30px',

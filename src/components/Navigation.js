@@ -1,92 +1,55 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { NavDropdown } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import logo from "../assets/new-logo.png";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Navigation.css";
+import whhcLogo from "../assets/logo.png"; // Using existing logo
 
 const Navigation = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleScroll = (sectionId) => {
-    const target = document.getElementById(sectionId);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate("/technozarre", { state: { targetSection: sectionId } });
+  const handleNavClick = (path, sectionId) => {
+    if (location.pathname === "/home" && sectionId) {
+      const target = document.getElementById(sectionId);
+      if (target) {
+        // Offset for fixed header
+        const headerOffset = 120;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        return;
+      }
+    }
+
+    if (path) {
+      navigate(path);
+      // Ensure we scroll to top on page change
+      window.scrollTo(0, 0);
     }
   };
 
   return (
-    <Navbar expand="lg" className="navbar">
-      <Container>
-        <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
-          
-          {/* Updated Brand Section */}
-          <Navbar.Brand href="/" style={{ display: "flex", alignItems: "center" }}>
-            <img
-              alt="WHHC Logo"
-              src={logo}
-              height="60" /* Increased height, removed hardcoded width so it scales proportionally */
-              style={{ objectFit: 'contain' }}
-              className="d-inline-block align-top"
-            />
-          </Navbar.Brand>
+    <>
+      {/* Capsule Navigation */}
 
-          <Navbar.Toggle
-            aria-controls="navbar-nav"
-            className="custom-toggle"
-            style={{backgroundColor: 'grey'}}
-          />
-        </div>
-        <Navbar.Collapse id="navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link className="navlink" href="/photogallery">
-              Events
-            </Nav.Link>
-            <Nav.Link className="navlink" href="/team">
-              Team
-            </Nav.Link>
-            <NavDropdown title="Technozarre'26" id="basic-nav-dropdown" className="custom-dropdown">
-              <NavDropdown.Item
-                className="technozarre-hlink"
-                onClick={() => navigate("/technozarre")}
-              >
-                Technozarre2k26
-              </NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              {/* 🛑 HIDING WORKSHOPS FOR NOW
-              <NavDropdown.Item
-                className="technozarre-link"
-                onClick={() => handleScroll("workshops")}
-              >
-                Workshops
-              </NavDropdown.Item>
-              */}
-              <NavDropdown.Item
-                className="technozarre-link"
-                onClick={() => handleScroll("technical")}
-              >
-                Technical
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                className="technozarre-link"
-                onClick={() => handleScroll("nontech")}
-              >
-                Non-Technical
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                className="technozarre-link"
-                onClick={() => handleScroll("gaming")}
-              >
-                Gaming
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <div className="whhc-logo-top-left" onClick={() => handleNavClick("/home")}>
+        <img src={require("../assets/whhcc.png")} alt="WHHC Logo" />
+      </div>
+
+      <div className="navbar-container">
+        <nav className="nav-capsule">
+          <span className="nav-item" onClick={() => handleNavClick("/home")}>Home</span>
+          <span className="nav-item" onClick={() => handleNavClick("/home", "about")}>About</span>
+          <span className="nav-item" onClick={() => handleNavClick("/photogallery")}>Events</span>
+          <span className="nav-item" onClick={() => handleNavClick("/team")}>The Crew</span>
+          <span className="nav-item" onClick={() => handleNavClick("/technozarre")}>Technozarre'26</span>
+        </nav>
+
+      </div>
+    </>
   );
 };
 
