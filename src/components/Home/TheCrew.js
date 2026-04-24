@@ -41,14 +41,14 @@ const SectionHeading = ({ title }) => (
 );
 
 const CardGrid = ({ photos, columns = 3 }) => {
-  const cardWidth = '300px';
+  const cardWidth = '350px';
   return (
     <div style={{
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      gap: '20px',
-      maxWidth: columns === 2 ? '680px' : '980px',
+      gap: '120px',
+      maxWidth: columns === 2 ? '900px' : '1400px',
       margin: '0 auto',
     }}>
       {photos.map((src, i) => (
@@ -64,7 +64,7 @@ const CardGrid = ({ photos, columns = 3 }) => {
 };
 
 const TheCrew = () => (
-  <div style={{ padding: '60px 40px 80px', backgroundColor: 'transparent' }}>
+  <div id="crew" style={{ padding: '60px 40px 80px', backgroundColor: 'transparent' }}>
 
     <h1 style={{
       fontFamily: "'Hunters', sans-serif",

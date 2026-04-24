@@ -20,13 +20,13 @@ const Events = () => {
 
   return (
       <div>
-        <section id='technical'>
+        <section id='technical' style={{ marginBottom: '100px' }}>
           <TechnicalEvents />
         </section>
-        <section id='nontech'>
+        <section id='nontech' style={{ marginBottom: '100px' }}>
           <NontechEvents />
         </section>
-        <section id='gaming'>
+        <section id='gaming' style={{ marginBottom: '100px' }}>
           <GamingEvents />
         </section>
       </div>
