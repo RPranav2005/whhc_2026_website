@@ -92,7 +92,6 @@ const Home = () => {
 
       {/* Main Content Sections */}
       <div className="home-background" style={{
-        paddingBottom: '80px',
         fontFamily: "'Poppins', sans-serif",
         position: 'relative',
         backgroundColor: 'transparent',
@@ -151,7 +150,8 @@ const Home = () => {
               fontWeight: '800',
               margin: '20px 0 30px 0',
               textTransform: 'uppercase',
-              letterSpacing: '2px'
+              letterSpacing: '2px',
+              textAlign: 'center'
             }}>
               Our <span style={{ color: '#ff3232' }}>Vision</span>
             </h2>

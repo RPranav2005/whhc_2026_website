@@ -41,7 +41,7 @@ const SectionHeading = ({ title }) => (
 );
 
 const CardGrid = ({ photos, columns = 3 }) => {
-  const cardWidth = '350px';
+  const cardWidth = '310px';
   return (
     <div style={{
       display: 'flex',

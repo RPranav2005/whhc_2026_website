@@ -82,7 +82,9 @@ const FlagShipEvent = () => {
               window.scrollTo(0, 0);
             }}
             style={{
-              width: 'clamp(280px, 25vw, 400px)',
+              width: 'clamp(280px, 30%, 400px)',
+              flex: '1 1 300px',
+              maxWidth: '380px',
               height: '260px',
               backgroundColor: 'rgba(255, 255, 255, 0.03)',
               backdropFilter: 'blur(15px)',
