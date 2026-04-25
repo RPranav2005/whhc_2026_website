@@ -151,7 +151,6 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .home {
-  /* background-image: url('/src/assets/home-bg.jpeg'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -206,7 +205,6 @@ h1, h2, h3, h4, h5, h6,
   background-color: rgb(0, 0, 0);
   justify-content: center;
   align-items: center;
-  padding-bottom: 20px;
 }
 
 .photogallery-bg {

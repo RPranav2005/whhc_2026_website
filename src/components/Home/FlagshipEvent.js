@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import technozarreLogo from '../../assets/tzzz2.png';
 import hhLogo from '../../assets/hh.png';
 
@@ -9,23 +10,27 @@ import hhLogo from '../../assets/hh.png';
  * Technozarre and Hack Horizons use image logos, Cicada uses Akira font.
  */
 const FlagShipEvent = () => {
+  const navigate = useNavigate();
   const events = [
     {
       id: 2,
       name: "HACK HORIZONS",
       logo: hhLogo,
-      type: "image"
+      type: "image",
+      path: "/photogallery"
     },
     {
       id: 1,
       name: "TECHNOZARRE",
       logo: technozarreLogo,
-      type: "image"
+      type: "image",
+      path: "/technozarre"
     },
     {
       id: 3,
       name: "CICADA",
-      type: "text"
+      type: "text",
+      path: "/photogallery"
     }
   ];
 
@@ -72,8 +77,14 @@ const FlagShipEvent = () => {
               boxShadow: '0 15px 40px rgba(255, 50, 50, 0.25)',
               borderColor: 'rgba(255, 50, 50, 0.5)'
             }}
+            onClick={() => {
+              navigate(event.path);
+              window.scrollTo(0, 0);
+            }}
             style={{
-              width: 'clamp(280px, 25vw, 400px)',
+              width: 'clamp(280px, 30%, 400px)',
+              flex: '1 1 300px',
+              maxWidth: '380px',
               height: '260px',
               backgroundColor: 'rgba(255, 255, 255, 0.03)',
               backdropFilter: 'blur(15px)',
@@ -116,7 +127,7 @@ const FlagShipEvent = () => {
             ) : (
               <h3 style={{
                 fontFamily: "'Hunters', sans-serif",
-                fontSize: 'clamp(1.8rem, 4vw, 3rem)',
+                fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
                 color: '#ff3232',
                 margin: 0,
                 textAlign: 'center',

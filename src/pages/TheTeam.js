@@ -1,6 +1,7 @@
 import React from "react";
 import Navigation from '../components/Navigation';
 import Footer from "../components/Home/Footer";
+import bgImage from "../assets/bgg.png";
 
 // Faculty Coordinators
 import jayanthi from '../assets/team/Jayanthi.png';
@@ -43,14 +44,14 @@ const SectionHeading = ({ title }) => (
 );
 
 const CardGrid = ({ photos, columns = 3 }) => {
-  const cardWidth = '300px';
+  const cardWidth = '350px';
   return (
     <div style={{
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'center',
-      gap: '20px',
-      maxWidth: columns === 2 ? '680px' : '980px',
+      gap: '120px',
+      maxWidth: columns === 2 ? '900px' : '1400px',
       margin: '0 auto',
     }}>
       {photos.map((src, i) => (
@@ -71,10 +72,35 @@ const CardGrid = ({ photos, columns = 3 }) => {
 
 const TheTeam = () => {
   return (
-    <div style={{ backgroundColor: 'transparent', minHeight: '100vh', color: 'white' }}>
-      <Navigation />
+    <div style={{ 
+      width: '100%', 
+      overflowX: 'hidden', 
+      position: 'relative', 
+      minHeight: '100vh', 
+      color: 'white',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
 
-      <div style={{ paddingTop: '120px', paddingBottom: '80px', padding: '120px 40px 80px' }}>
+      {/* Fixed Background Image — stays in place while content scrolls */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: -1,
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundColor: '#000'
+      }} />
+
+      <div style={{ backgroundColor: 'transparent', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 50 }}>
+        <Navigation />
+      </div>
+
+      <div style={{ flex: 1, paddingTop: '120px', paddingBottom: '80px', padding: '120px 40px 80px' }}>
 
         <h1 style={{
           fontFamily: "'Hunters', sans-serif",

@@ -16,7 +16,7 @@ const Cicada = () => {
   return (
     // 🛑 FIX: Added flexbox column layout to push footer down
     <div style={{ backgroundColor: '#050505', color: 'white' }}>
-      
+
       {/* Sticky Navbar */}
       <div style={{ backgroundColor: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)', position: 'sticky', top: 0, zIndex: 50 }}>
         <Navigation />
@@ -24,21 +24,21 @@ const Cicada = () => {
 
       {/* 🛑 FIX: Added flex: 1 so this container stretches to fill empty space */}
       <Container style={{ paddingTop: '120px', paddingBottom: '40px' }}>
-        
+
         {/* =========================================
             CICADA SECTION
             ========================================= */}
         <div style={{ marginBottom: '60px' }}>
-          <h1 style={{ 
-            fontFamily: "'Hunters', sans-serif", 
-            color: 'rgb(255, 50, 50)', 
+          <h1 style={{
+            fontFamily: "'Hunters', sans-serif",
+            color: 'rgb(255, 50, 50)',
             textShadow: '0px 0px 15px rgba(255, 0, 0, 0.6)',
             marginBottom: '30px',
             textAlign: 'center'
           }}>
-            CICADA 25
+            CICADA'25
           </h1>
-          
+
           {/* The Professional Cicada 25 Writeup */}
           <div style={{ fontSize: '1.2rem', lineHeight: '1.8', color: 'rgb(220, 220, 220)', textAlign: 'justify', marginBottom: '40px' }}>
             <p>
@@ -65,16 +65,16 @@ const Cicada = () => {
                   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                   cursor: 'pointer'
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 50, 50, 0.6)';
-                  e.currentTarget.style.zIndex = '10';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.5)';
-                  e.currentTarget.style.zIndex = '1';
-                }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                    e.currentTarget.style.boxShadow = '0 0 20px rgba(255, 50, 50, 0.6)';
+                    e.currentTarget.style.zIndex = '10';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.5)';
+                    e.currentTarget.style.zIndex = '1';
+                  }}
                 />
               </Col>
             ))}
@@ -82,7 +82,7 @@ const Cicada = () => {
         </div>
 
       </Container>
-      
+
       <Footer />
     </div>
   );
